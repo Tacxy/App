@@ -1,2 +1,81 @@
-/**/
-
+/**/  
+body {
+     background-color : #7fffd4;
+}
+p.midashi {
+          color: #ffd700;
+          font-size: 30px;
+          font-weight: bold;
+          font-family: "ＭＳ ゴシック",sans-serif; 
+          text-shadow:3px 3px 2px #191970;
+}      
+p.setsumei {
+           font-size: small;
+}
+p.sex{    
+}
+div.form1{       
+        line-height: 1.2;
+        margin-bottom: 20px;
+}
+div.form2{
+         line-height: 1.5;
+}
+input.keisan{
+            margin-top: 25px;
+            margin-left: 70px;
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: #b0c4de;
+            color: #778899;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+            border-bottom: solid 3px #627295;
+            border-radius: 3px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+input.keisan:active {
+                    -ms-transform: translateY(4px);
+                    -webkit-transform: translateY(4px);
+                    transform: translateY(4px);
+                    border-bottom: none;
+}
+div.result{
+          border-top: ridge 6px #ffd700;
+          margin-top: 30px;
+          line-height: 2;
+}
+input.taisha {
+             outline: inset 2px #0000ff;
+}
+input.cal {
+          outline: inset 2px #0000ff;
+}
+input.totaltext {
+                outline: ridge 3px #ff0000;
+}            
+p.total{
+       font-size: x-large;
+       font-weight: bold;
+       text-align: center;
+}
+p.hosoku {
+           font-size: x-small;
+}
+img#img1{
+        width:30%;
+        height:30%;
+        margin-top: 10px;
+        margin-left: 20px;
+}  
+img#img2{
+        width:40%;
+        height:40%;
+        
+}
+img#img3{
+        width:12%;
+        height:12%;
+        margin-left: 20px;
+}

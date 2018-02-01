@@ -7,20 +7,98 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
-    <script>
+    <script type="text/javascript">
+    function calc1() {
+     if(document.frm.sex.value == "0")
+       {document.frm.taishaResult.value = (66 + 13.7 * parseInt(frm.weight.value) + 5.0 * frm.tall.value - 6.8 * frm.age.value);} 
+     else {
+        document.frm.taishaResult.value = (665 + 9.6 * parseInt(frm.weight.value) + 1.7 * frm.tall.value - 7.0 * frm.age.value);
+        }
+    }
+    function calc2(){   
+        document.frm.METsResult.value = (frm.shumoku.value * frm.weight.value * frm.time.value /60 * 1.05);
+    }
+    function calc3(){
+        document.frm.totalResult.value = ( parseInt(frm.taishaResult.value) + parseInt(frm.METsResult.value) );
+    }
     </script>
 </head>
 <body>
-	<br />
-<form>
-性別：
-<input type="radio" name="性別" value="男" /> 男　
-<input type="radio" name="性別" value="女" /> 女
-<br>
+<p class="midashi" >基礎代謝＆運動カロリーらくらく計算
+<img id="img1" src="images/yoga.png" align="middle" />
+</p>
+<p class="setsumei" >じっとしていても体内で一日に消費するカロリーである基礎代謝量と、運動によって消費するカロリー量、それらを合計した総消費カロリーを求めることができます。</p>
+<form name="frm" id="frm">
+<p class="sex">性別：
+<input type="radio" id="sex" name="sex" value="0" checked> 男　
+<input type="radio" id="sex" name="sex" value="1" > 女
+</p>
+<div class="form1">
+<img id="img2" src="images/boxing.png" align="right"/>
 私は<br>
-<input type="text" size="6" name="age">歳で<br>
+<input value="" size="4" name="age" >歳で<br>
+身長は<br> 
+<input value="" size="4" name="tall"  >cmで<br>
 体重は<br>
-<input type="text" size="6" name="weight">kgです。
+<input value="" size="4" name="weight" >kgです。<br>
+</div>
+<div class="form2">
+実施した運動種目<br>
+<select name="shumoku" style="width: 300px;">
+<option selected>選択してください</option><br>
+<option disabled>↓歩行系↓</option>
+<option value="2.5" >遅い歩行（54m/分）【2.5METs】
+<option value="3.0" >普通歩行（67m/分）【3.0METs】
+<option value="3.8" >やや速歩（94m/分）【3.8METs】
+<option value="4.0" >速歩（95～100m/分程度）【4.0METs】
+<option value="6.0" >ジョギングと歩行の組み合わせ【6.0METs】
+<option value="7.0" >ジョギング【7.0METs】
+<option value="7.5" >山登り（約1～2kgの荷物を背負って）【7.5METs】
+<option value="8.0" >ランニング：134m/分【8.0METs】
+<option value="10.0" >ランニング：161m/分【10.0METs】
+<option value="3.0" >階段を下りる【3.0METs】
+<option value="8.0" >階段を上がる【8.0METs】
+<option disabled>↓自転車系↓</option>
+<option value="3.0" >自転車エルゴメーター（50ワット）【3.0METs】
+<option value="5.5" >自転車エルゴメーター（100ワット）【5.5METs】
+<option value="8.0" >サイクリング（約20km/時）【8.0METs】
+<option disabled>↓水中系↓</option>
+<option value="4.0" >水中運動、アクアビクス【4.0METs】
+<option value="6.0" >スイミング【6.0METs】
+<option value="7.0" >水泳：背泳ぎ【7.0METs】
+<option value="8.0" >水泳：ゆっくりのクロール（45m/分）【8.0METs】
+<option value="10.0" >水泳：平泳ぎ【10.0METs】
+<option value="11.0" >水泳：速いクロール（約70m/分）、バタフライ【11.0METs】
+<option disabled>↓フィットネス系↓</option>
+<option value="2.5" >ストレッチ・ヨガ【2.5METs】
+<option value="4.8" >バレエ、モダン、ツイスト、ジャズ【4.8METs】
+<option value="6.5" >エアロビクス【6.5METs】
+<option value="3.0" >ウエイトトレーニング（軽・中強度）【3.0METs】
+<option value="6.0" >ウエイトトレーニング（高強度）【6.0METs】
+<option disabled>↓スポーツ系↓</option>
+<option value="3.0" >ボーリング、フリスビー、バレーボール）【3.0METs】
+<option value="4.0" >卓球、太極拳【4.0METs】
+<option value="4.5" >バドミントン、ゴルフ（クラブを担ぐ）【4.5METs】
+<option value="5.0" >ソフトボール、野球【5.0METs】
+<option value="6.0" >バスケットボール【6.0METs】
+<option value="7.0" >サッカー、テニス、スケート、スキー【7.0METs】
+<option value="10.0" >柔道、柔術、空手、キックボクシング、テコンドー、ラグビー【10.0METs】
+</select><br>
+運動時間:
+<input value"" size="4" name="time" >分<br>
+</div>
+<input class="keisan" type="button" value=" 計  算 " onclick="calc1();calc2();calc3();javascript:location.href='#page-bottom';">
+<img id="img3" src="images/women.png" align="left"/>
+<div class="result">
+
+<br>あなたの基礎代謝は・・・　<input class="taisha" type="text" size="8" name="taishaResult"> kcal
+<br>運動の消費カロリーは・・・<input class="cal" type="text" size="8" name="METsResult"> kcal
+<p class="total">総消費カロリーは・・・
+<br><input class="totaltext" type="text" size="8" name="totalResult"> kcal</p>
+</div>    
 </form>
-</body>
+<p class="hosoku">
+※基礎代謝はハリス・ベネディクト方程式により算出。運動消費カロリーは種目ごとのメッツ（厚生労働省より抜粋）から算出。<br>
+各数値は半角数字で入力してください。</p>
+<body>
 </html>
